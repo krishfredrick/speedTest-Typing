@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { GlobalStyles } from './styless/global';
+import TypingBox from './components/TypingBox'
+ //             --- creating the random words function through inbuild --- 
+ var randomWords = require('random-words');
 
 function App() {
+
+  const words = randomWords(50);
+  console.log('')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="canvas">
+      <GlobalStyles/>
+      <h1 className='heading' style={{textAlign:'center'}}>Typing Website</h1>
+      <TypingBox words={words}/>
+      <h1 style={{textAlign:'center'}}>Footer</h1>
     </div>
   );
 }
